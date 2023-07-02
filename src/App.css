@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  background-color: #e5e5e5;
+}
+header {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: end;
+}
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+a:visited {
+  color: inherit;
+}
+a:active {
+  color: white;
+}
+.home h1 {
+  margin: 30vh 50vw 5rem 5rem;
+}
+.home a {
+  margin: 5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.shop {
+  display: flex;
+  flex-direction: column;
+}
+.shop h1 {
+  text-align: center;
+}
+.shop .products-grid {
+  display: grid;
+}
+.footer {
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.fa-github {
+  color: black;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
