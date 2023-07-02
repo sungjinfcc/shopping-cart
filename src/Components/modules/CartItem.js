@@ -2,12 +2,14 @@ import React from "react";
 
 function CartItem({ product, increment, decrement }) {
   return (
-    <div>
-      <p className="item-image">{product.url}</p>
-      <div>
+    <div className="cart-item">
+      <div className="img-container">
+        <img src={product.url} alt={product.name} className="item-image" />
+      </div>
+      <div className="cart-content">
         <p className="item-name">{product.name}</p>
         <p className="item-price">{product.price}</p>
-        <div>
+        <div className="cart-buttons">
           <button type="button" onClick={decrement}>
             -
           </button>

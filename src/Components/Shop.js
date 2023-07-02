@@ -8,9 +8,10 @@ function Shop({ products, addToCart }) {
       <div className="products-grid">
         {products.map((product) => {
           return (
-            <div>
+            <div className="product-card">
               <Product product={product} />
               <button
+                className="add-to-cart"
                 type="button"
                 onClick={() =>
                   addToCart({

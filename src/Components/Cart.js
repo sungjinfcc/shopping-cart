@@ -3,9 +3,9 @@ import CartItem from "./modules/CartItem";
 
 function Cart({ cart, increment, decrement }) {
   return (
-    <div>
+    <div className="cart">
       <h1>Cart</h1>
-      <div>
+      <div className="products-flex">
         {cart.map((product) => (
           <CartItem
             product={product}
@@ -14,15 +14,19 @@ function Cart({ cart, increment, decrement }) {
           />
         ))}
       </div>
-      <p>
-        total: {cart.reduce((total, product) => total + product.quantity, 0)}{" "}
-        items,{" "}
-        {cart.reduce(
-          (total, product) => total + product.price * product.quantity,
-          0
-        )}
-        USD
-      </p>
+      <div className="total">
+        <p>total : </p>
+        <div className="price">
+          {cart.reduce(
+            (total, product) => total + product.price * product.quantity,
+            0
+          )}{" "}
+          USD
+        </div>
+      </div>
+      <button className="checkout" type="button">
+        Checkout
+      </button>
     </div>
   );
 }

@@ -10,27 +10,82 @@ function App() {
   const [cart, setCart] = useState([]);
   const [products] = useState([
     {
-      name: "product 1",
-      url: "url 1",
-      description: "Good product",
-      price: 3000,
+      name: "Product 1",
+      url: "https://cdn.pixabay.com/photo/2014/10/31/10/01/camera-510530_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 300,
     },
     {
-      name: "product 2",
-      url: "url 2",
-      description: "Bad product",
-      price: 7000,
+      name: "Product 2",
+      url: "https://cdn.pixabay.com/photo/2013/10/05/10/42/apple-190970_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 700,
     },
     {
-      name: "product 3",
-      url: "url 3",
-      description: "product",
-      price: 13000,
+      name: "Product 3",
+      url: "https://cdn.pixabay.com/photo/2014/10/31/10/01/lens-510529_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 130,
+    },
+    {
+      name: "Product 4",
+      url: "https://cdn.pixabay.com/photo/2014/10/31/10/00/camera-510524_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 100,
+    },
+    {
+      name: "Product 5",
+      url: "https://cdn.pixabay.com/photo/2020/09/23/20/27/headphones-5596987_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 200,
+    },
+    {
+      name: "Product 6",
+      url: "https://cdn.pixabay.com/photo/2018/01/20/06/41/earphone-3093921_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 250,
+    },
+    {
+      name: "Product 7",
+      url: "https://cdn.pixabay.com/photo/2014/10/31/10/00/lens-510527_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 70,
+    },
+    {
+      name: "Product 8",
+      url: "https://cdn.pixabay.com/photo/2022/05/26/14/27/camera-7223047_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 80,
+    },
+    {
+      name: "Product 9",
+      url: "https://cdn.pixabay.com/photo/2018/05/08/12/04/smartphone-3382876_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 900,
+    },
+    {
+      name: "Product 10",
+      url: "https://cdn.pixabay.com/photo/2014/10/31/10/01/camera-510531_1280.jpg",
+      description:
+        "Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et malesuada fames ac turpis.",
+      price: 1300,
     },
   ]);
 
   const addToCart = (newItem) => {
-    if (cart.some((item) => item.name === newItem.name)) return;
+    if (cart.some((item) => item.name === newItem.name)) {
+      alert("Already in the cart!");
+      return;
+    }
     setCart([...cart, newItem]);
   };
 
@@ -52,7 +107,10 @@ function App() {
     setCart(
       cart.map((item) => {
         if (item.name !== productName) return item;
-        if (item.quantity === 1) return item; // Can't go 0
+        if (item.quantity === 1) {
+          alert("Can't go down");
+          return item;
+        }
         return {
           ...item,
           quantity: item.quantity - 1,
